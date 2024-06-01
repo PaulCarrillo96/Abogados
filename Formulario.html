@@ -18,12 +18,6 @@
   <li class="right"><a href="VistaCliente.html">Cliente</a></li>
 </ul>
 
-<div style="padding:0 16px;">
-  <h2>Responsive Topnav Example</h2>
-  <p>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
-  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
-  <h4>Resize the browser window to see the effect.</h4>
-</div>
 
 <!-- Modal -->
 <div id="climaModal" class="modal" tabindex="-1">
@@ -60,8 +54,42 @@
     </div>
   </div>
 </div>
-
-
+<br>
+  <!-------------------Formulario de contacto------------>
+  <h1 class="text-center">Formulario de Contacto</h1>
+  <form class="formulario" id="formularioContacto">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre">
+      <span class="error" id="errorNombre" style="color: red;"></span>
+    </div>
+    <div>
+      <label for="correo">Correo Electrónico:</label>
+      <input type="email" id="correo" name="correo">
+      <span class="error" id="errorCorreo" style="color: red;"></span>
+    </div>
+    <div>
+      <label for="tipoProducto">Tipo de Producto:</label>
+      <input type="text" id="tipoProducto" name="tipoProducto">
+      <span class="error" id="errorTipoProducto" style="color: red;"></span>
+    </div>
+    <div>
+      <label for="asunto">Asunto:</label>
+      <input type="text" id="asunto" name="asunto">
+      <span class="error" id="errorAsunto" style="color: red;"></span>
+    </div>
+    <div>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+      <span class="error" id="errorMensaje" style="color: red;"></span>
+    </div>
+    <div>
+      <input type="submit" value="Enviar">
+    </div>
+  </form>
+  
+  <div class="mensaje-exito" id="mensajeExito">¡El formulario se envió correctamente!</div>
+  <div class="mensaje-error" id="mensajeError">No se pudo enviar el formulario. ¡Campos obligatorios incompletos!h</div>
 
 
 <script src="Modal.js"></script>
