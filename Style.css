@@ -29,39 +29,60 @@ ul.topnav li.right {float: right;}
   ul.topnav li {float: none;}
 }
 
-    /* MODAL */
+.modal {
+  display: none; /* Oculta la modal por defecto */
+  position: fixed; /* Fija la modal en una posición relativa a la ventana del navegador */
+  z-index: 1; /* Define la posición z del elemento, colocándolo por encima de otros elementos */
+  left: 0; /* Alinea la modal a la izquierda de la ventana del navegador */
+  top: 0; /* Alinea la modal en la parte superior de la ventana del navegador */
+  width: 100%; /* Establece que la modal ocupe el 100% del ancho de la ventana */
+  height: 100%; /* Establece que la modal ocupe el 100% de la altura de la ventana */
+  overflow: auto; /* Habilita el desplazamiento si el contenido de la modal es más grande que el área visible */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente de color negro */
+  display: flex; /* Usa flexbox para el diseño */
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
 
-    /* Modal Header */
-    .modal-header {
-        padding: 2px 16px;
-        background-color: #4169b3;
-        color: white;
-    }
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 500px;
+  color: var(--bs-modal-color, #000);
+  pointer-events: auto;
+  background-color: var(--bs-modal-bg, #fff);
+  background-clip: padding-box;
+  border: var(--bs-modal-border-width, 1px) solid var(--bs-modal-border-color, #000);
+  border-radius: var(--bs-modal-border-radius, 5px);
+  outline: 0;
+  padding: 20px;
+  position: absolute; /* Cambia la posición a absoluta */
+  top: 50%; /* Coloca la parte superior de la modal en el 50% de la ventana */
+  left: 50%; /* Coloca la parte izquierda de la modal en el 50% de la ventana */
+  transform: translate(-50%, -50%); /* Utiliza transform para centrar la modal */
+}
 
-    /* Modal Body */
-    .modal-body {
-        padding: 2px 16px;
-    }
+.modal-footer {
+  padding: 2px 16px; /* Espaciado interno del pie de página de la modal */
+}
 
-    /* Modal Footer */
-    .modal-footer {
-        padding: 2px 16px;
-        background-color: #969696;
-        color: white;
-    }
 
-    /* Modal Content */
-    .modal-content {
-        position: relative;
-        background-color: #fefefe;
-        margin: auto;
-        padding: 0;
-        border: 1px solid #888;
-        width: 80%;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-        animation-name: animatetop;
-        animation-duration: 0.4s;
-    }
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
     /* Add Animation */
     @keyframes animatetop {
@@ -121,23 +142,34 @@ border: 2px solid #969696; /* Bordes del Perro de color a que quiera */
 filter: brightness(1.2); /* Aumenta el brillo al pasar el ratón */
 }
 
-   /* CARRUSEL*/
+.carousel-item img {
+  width: 100%; /* Ajustar el ancho de la imagen al 100% del contenedor */
+  height: 100%; /* Altura automática para mantener la proporción */
+}
 
-.carousel {
-    margin-top: 20px; /* Espacio entre navbar y carrusel */
-    border: 2px solid #ccc; /* Agregar borde al carrusel */
-    border-radius: 5px; /* Agregar bordes redondeados al carrusel */
-  }
-  .carousel-item img {
-    max-width: 2000px;
-    max-height: 350px; /* Altura máxima del cuadro del carrusel */
-    width: auto; /* Ancho automático para mantener la proporción */
-    margin: auto; /* Centrar la imagen horizontalmente */
-    object-fit: contain; /* Hacer que la imagen se ajuste al cuadro manteniendo su proporción */
-  }
-  .carousel-item {
-    text-align: center;
-  }
+
+.carousel-control-next {
+  width: 50%; /* Ancho de los botones de control */
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo */
+  border-radius: 50%; /* Borde redondeado */
+  border: none; /* Eliminar borde */
+}
+
+
+.carousel-control-next-icon {
+  background-image: none; /* Eliminar imagen de flecha predeterminada */
+  color: white; /* Color del icono */
+  font-size: 24px; /* Tamaño del icono */
+}
+
+.carousel-control-prev {
+  left: -2%; /* Posición del botón de control previo */
+}
+
+.carousel-control-next {
+  right: -20%; /* Posición del botón de control siguiente */
+}
+
 
    /* ESTILO VISTAS */
           /* Estilos generales */
@@ -249,12 +281,23 @@ width: calc(33% - 20px); /* 3 cards per row with margin */
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 text-align: center;
 }
+/* Estilos para el contenedor de burbujas */
 .bubble-container {
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: 10px;
+  display: flex; /* Establece el contenedor como un elemento de tipo flex para alinear su contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  margin-top: 10px; /* Agrega un espacio en la parte superior del contenedor */
+  padding: 10px; /* Agrega un espacio interno alrededor del contenido */
 }
+
+/* Estilos para ajustar el tamaño de las imágenes de perfil */
+.profile-picture img {
+  width: 150px; /* Ancho deseado de la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 70%; /* Asegura que la imagen sea circular */
+}
+
+
 .bubble {
 display: flex;
 align-items: center;
@@ -348,3 +391,24 @@ h1{
   display: none;
   color: red;
   }
+  
+  .btn-img {
+    display: block; /* Hacer que el enlace sea un bloque */
+    text-align: right; /* Alinear al centro */
+  
+  }
+  .sec-title2 .title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0a0a0a;
+    max-width: 490px;
+    margin: 0 auto;
+  
+  }
+  
+
+
+
+
+  
